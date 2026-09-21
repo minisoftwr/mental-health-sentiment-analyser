@@ -28,7 +28,7 @@ def save_entry(text,sentiment,emotion,score):
     time = datetime.now().isoformat()
     cursor.execute( 
         """
-        INSERT INTO entries(text,sentiment,emotion,score,timestamp)
+        INSERT INTO entries(text,sentiment,emotions,score,timestamp)
         VALUES (?,?,?,?,?)"""
         ,(text,sentiment,emotion,score,time)
     )
