@@ -4,11 +4,11 @@ from database import init_db, save_entry, get_entries
 
 app = Flask(__name__)
 
-# Initialisiing the databse when the app is started
+# Initialisiing the database when the app is started
 init_db()
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/analyse', methods=['POST'])
 def analyse_text():
