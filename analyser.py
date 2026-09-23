@@ -12,7 +12,7 @@ def get_qoute():
         qoute = random.choice(data)
         return{
             "text" : qoute ["q"],
-            "author" : qoute["a"]
+             "author" : qoute["a"],
         }
     except Exception as e:
         return{
