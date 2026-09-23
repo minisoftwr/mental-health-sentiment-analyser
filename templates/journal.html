@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{{ url_for('static',filename='style.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href ="/journal">Journal</a>
+    </nav>
+        <div class="home">
+        <h1>Your Journal</h1>
+    </div>
+    
+    <div class="journal">
+        {% if entries %}
+        {% for entrie in entries %}
+        <div class="entry">
+            <div class="entry1">
+                <span class="entry-emotion">{{entrie.emotions}}</span>
+                <span class="entry-time">{{ entrie.timestamp }}</span>  
+            </div>
+            <div class="entry2">
+                <span class="label"></span>
+                <span class="value">{{ entrie.sentiment }}</span>  
+            </div>
+            <div class="entry2">
+                <span class="label">Score</span>
+                <span class="value">{{ entrie.score }}</span>  
+            </div> 
+            <p class="entry-text">{{entrie.text}}</p> 
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="empty">
+             <p>No entries yet -</p> 
+                <a href= "/" >Analyse Some Text</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
