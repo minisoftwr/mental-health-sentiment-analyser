@@ -7,12 +7,19 @@
     <title>Home</title>
 </head>
 <body>
-    <nav>
-        <a href="/journal">Journal</a>
-        <a href ="/"> Home</a>
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href ="/journal">Journal</a>
     </nav>
-    <h1> Sentiment Analysis</h1>
-    <div class="card">
+    <div class="home">
+        <h1> Sentimental Anaylsis</h1>
+    </div>
+    <div class="home-qoute">
+        <p class="home-qoute-text">“At the center of your being you have the answer; 
+            <br>you know who you are and you know what you want.”</p>
+        <p class="home-qoute-author">-Lao Tzu</p>
+    </div>
+    <div class="home-card">
         <form action ="/analyse" method="post">
             <textarea name="text" placeholder = "How are you feeling today...">
             </textarea>
