@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{{ url_for('static',filename='style.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href ="/journal">Journal</a>
+    </nav>
+    <div class="home">
+        <h1>Your Analysis</h1>
+    </div>
+    
+    <div class="result-card">
+        <div class="items">
+            <span class="label">Sentiment</span>
+            <span class="value">{{ result.sentiment }}</span>  
+        </div>
+        <div class="items">
+            <span class="label">Emotions</span>
+            <span class="value">{{ result.emotions }}</span>  
+        </div>
+        <div class="items">
+            <span class="label">Score</span>
+            <span class="value">{{ result.score }}</span>  
+        </div>
+    </div>
+    <div class="qoute">
+        <p class="qoute-text">{{ result.quotes.text}}</p>
+        <p class="qoute-author">- {{ result.quotes.author}}</p>
+    </div>
+    <div class="actions">
+        <a href="/"> Analyse another </a>
+        <a href="/journal">View Journal</a>
+    </div>
+</body>
+</html>
